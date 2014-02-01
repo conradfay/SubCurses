@@ -1,7 +1,7 @@
 PROJNAME=subcurses
 CC=g++
 CFLAGS=-Isrc
-LDFLAGS=-Isrc
+LDFLAGS=-Isrc -std=c++11 -g
 LIBS=
 BUILDDIR=build
 SRCDIR=src
@@ -10,8 +10,11 @@ OBJFILES=$(patsubst $(SRCDIR)/%.cpp, $(BUILDDIR)/%.o, $(SRCFILES))
 
 All: $(PROJNAME)
 
-$(PROJNAME):
+$(PROJNAME): clean
 	$(CC) $(LDFLAGS) $(SRCFILES) -o $@
+
+clean:
+	rm -f $(PROJNAME)
 
 #$(PROJNAME): $(OBJFILES)
 #	$(CC) $(LDFLAGS) $^ -o $@

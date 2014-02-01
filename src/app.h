@@ -10,6 +10,8 @@ class App {
         App();
         ~App();
 
+        void setActiveScreen(const Screen& screen);
+
         void update();
 
     private:

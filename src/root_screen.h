@@ -6,9 +6,22 @@
 namespace SC {
 
 class RootScreen : public Screen {
+
     public:
+
         RootScreen();
         ~RootScreen();
+
+        virtual std::string getTitle();
+
+    private:
+
+        virtual void procInput();
+
+        virtual void render();
+
+        virtual void updateState();
+
 };
 
 }

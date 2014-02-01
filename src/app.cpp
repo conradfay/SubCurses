@@ -10,8 +10,12 @@ App::~App() {
 
 }
 
-void App::update() {
+void App::setActiveScreen(const Screen& screen) {
+    activeScreen = (Screen*)&screen;
+}
 
+void App::update() {
+    activeScreen->update();    
 }
 
 }

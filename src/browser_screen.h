@@ -6,10 +6,23 @@
 namespace SC {
 
 class BrowserScreen : public Screen {
+
     public:
+
         BrowserScreen();
         BrowserScreen(Screen* parent);
         ~BrowserScreen();
+
+        virtual std::string getTitle();
+
+    private:
+
+        virtual void procInput();
+
+        virtual void render();
+
+        virtual void updateState();
+
 };
 
 }
